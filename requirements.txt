@@ -3,5 +3,6 @@ matplotlib
 keras
 streamlit
 opencv-python
+opencv-python-headless
 tensorflow
 streamlit-drawable-canvas
