@@ -1,11 +1,17 @@
 import streamlit as st
 import cv2
 import numpy as np
+import tensorflow as tf
 from tensorflow.keras.models import load_model
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
-model = load_model('final.h5')
+model = tf.keras.models.load_model('final.h5')
+
+# Define the canvas size and stroke width
+canvas_width = 300
+canvas_height = 300
+stroke_width = 10
 
 
 def preprocess_image(img):
