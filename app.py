@@ -10,10 +10,6 @@ from PIL import Image, ImageOps
 
 model = tf.keras.models.load_model('final.h5')
 
-
-# Load the Keras model
-model = tf.keras.models.load_model('best_model.h5')
-
 # Define the canvas size and stroke width
 canvas_width = 300
 canvas_height = 300
