@@ -6,7 +6,7 @@ from tensorflow.keras.models import load_model
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
-model = load_model('.\best_model.h5')
+model = load_model('final.h5')
 
 
 def preprocess_image(img):
