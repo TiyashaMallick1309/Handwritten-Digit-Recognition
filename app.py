@@ -1,13 +1,13 @@
 import streamlit as st
-import numpy as np
 import cv2
-import tensorflow as tf
+import numpy as np
 from tensorflow.keras.models import load_model
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
+
 from PIL import Image, ImageOps
 
-model = tf.keras.models.load_model('final.h5')
+model = load_model('final.h5')
 
 canvas_width = 300
 canvas_height = 300
