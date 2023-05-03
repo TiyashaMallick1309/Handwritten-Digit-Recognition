@@ -62,14 +62,6 @@ def main():
         digit_index = np.argmax(prediction)
         st.write("Predicted Digit:", digit_index)
 
-    # Get the image from the canvas
-    if canvas.image_data is not None:
-        image = Image.fromarray(
-            canvas.image_data.astype('uint8'), 'RGBA').convert('L')
-        st.image(image, width=150, caption="Drawn digit")
-        digit = predict_digit(image)
-        st.write(f"Predicted digit: {digit}")
-
 
 if __name__ == "__main__":
     main()
