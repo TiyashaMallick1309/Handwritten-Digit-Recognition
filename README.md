@@ -27,7 +27,7 @@ The model was trained on the MNIST dataset using a deep neural network architect
 The model uses a convolutional neural network architecture with two convolutional layers, max pooling layers, and a dropout layer to prevent overfitting.<br/> The model achieved an accuracy of 99.05% on the test set.
 
 ## Contributing
-If you would like to contribute to this project, you can open an issue or submit a pull request. All contributions are welcome!
+If you would like to contribute to this repository by adding additional resources or improving the existing content, please feel free to submit a pull request or open an issue. Your contributions are greatly appreciated!
 
 ## License
 This project is open-source and available under the MIT License.
