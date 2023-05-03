@@ -22,13 +22,10 @@ drawing_mode = st.sidebar.selectbox("Drawing mode", ["freedraw", "transform"])
 # Define a function to preprocess the image for the model
 
 
-def preprocess_image(image):
-    image = ImageOps.grayscale(image)
-    image = image.resize((28, 28))
-    image_array = np.array(image)
-    image_array = image_array.astype('float32') / 255.0
-    image_array = np.expand_dims(image_array, axis=0)
-    return image_array
+def preprocess_image(img):
+    img = cv2.resize(255 - cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), (28, 28))
+    img = img.reshape(1, 28, 28, 1).astype('float32') / 255
+    return img
 
 # Define a function to get a prediction from the model
 
@@ -43,7 +40,7 @@ def predict_digit(image):
 
 
 def main():
-    st.title("Sketchboard")
+    st.title("Digit Recognition Sketchboard")
     # Create a canvas for drawing
     canvas = st_canvas(
         fill_color="white",
@@ -55,6 +52,16 @@ def main():
         drawing_mode=drawing_mode,
         key="canvas",
     )
+    if st.button("Predict"):
+        drawn_image = canvas.image_data
+        preprocessed_image = preprocess_image(drawn_image)
+        prediction = model.predict(preprocessed_image)
+        plt.imshow(preprocessed_image.reshape(28, 28), cmap='gray')
+        plt.show()
+        print(prediction)
+        digit_index = np.argmax(prediction)
+        st.write("Predicted Digit:", digit_index)
+
     # Get the image from the canvas
     if canvas.image_data is not None:
         image = Image.fromarray(
