@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from PIL import Image, ImageOps
 
 # Load the Keras model
-model = tf.keras.models.load_model('best_model.h5')
+model = tf.keras.models.load_model('final.h5')
 
 # Define the canvas size and stroke width
 canvas_width = 300
